@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Code_Quiz" content="Quiz" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets\css/style.css">
+  <title>Code Quiz!</title>
+</head>
+
+<body>
+    <div class="headerCard">
+    <h5 id="view-high-scores">View High Scores</h5>
+    <h5 id="timeRemaining">Time Remaining:<span id="count">3:00</span></h5>
+    </div>
+    <div class="entireBox">
+    
+            <div class="quizHeader">
+            <div class="quizContainer" class="hide" id="quiz">
+                <div class="quiz-header">
+                  <h2 id="question">Question Here</h2>
+                      <div id="answer-buttons" class="btn-grid">
+                        <button class="btn">Answer 1</button>
+                        <button class="btn">Answer 2</button>
+                        <button class="btn">Answer 3</button>
+                        <button class="btn">Answer 4</button>
+                      </div>
+                  <!-- tried to make a quiz layout via radio buttons, didnt work out.... -->
+                  <!-- <ul>
+                    <li>
+                      <input type="radio" name="answer" id="a" class="answer">
+                      <label for="a" id="a_text">A</label>
+                    </li>
+            
+                    <li>
+                      <input type="radio" name="answer" id="b" class="answer">
+                      <label for="b" id="b_text">B</label>
+                    </li>
+            
+                    <li>
+                      <input type="radio" name="answer" id="c" class="answer">
+                      <label for="c" id="c_text">C</label>
+                    </li>
+            
+                    <li>
+                      <input type="radio" name="answer" id="d" class="answer">
+                      <label for="d" id="d_text">D</label>
+                    </li>
+                  </ul> -->
+                </div>
+            
+                <div class="controls">
+                  <button id="start-btn" class="btn btn-start">Start</button>
+                  <button id="next-btn" class="btn btn-next hide">Next</button>
+                  <button id="start-btn" class="start-btn btn">Start</button>
+                  <button id="next-btn" class="next-btn btn hide">Next</button>
+                </div>
+            
+              </div>
+
+  
+
+    <script src="./javascript/script.js"></script>
+
+</body>
+</html>

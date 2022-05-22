@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa&family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FAC875;
+    color: #75B8FA;
+}
+
+.entireBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+}
+
+.btn {
+    font-size:15px;
+    background-color:#7AE8FF;
+    border-color: #E8D4C2;
+    color:#99561C;
+    margin-left: 80px;
+}
+#startClock {
+    display: block;
+    margin-left: 40%;
+}
+#count {
+   margin-left:20px;
+   font-size:50px;
+   color:#57CDE6;
+}
+
+#minutes {
+    text-align: center;
+}
+
+.headerCard {
+    display: flex;
+    justify-content: space-around;
+}
+
+#view-high-scores {
+    font-family: 'Press Start 2P', cursive;
+    
+}
+
+#timeRemaining {
+    font-family:'Changa', sans-serif;
+}
+
+.quizHeader {
+    align-items: center;
+}
+
+.quizContainer{
+    background-color: #e89754;
+    border-radius: 15px;
+    width: 625px;
+    height: 300px;
+}
+
+h2 {
+    text-align: center;
+    padding-left: 60px;
+    padding-top: 60px; 
+}
+
+ul {
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+#btn-start {
+    display: block;
+    text-align: center;
+    padding-left: 250px;
+    padding-right: 250px;
+    font-size:40px;
+    background-color:#7AE8FF;
+    border-color: #E8D4C2;
+    color:#99561C;
+}
