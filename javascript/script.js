@@ -85,16 +85,12 @@ function clearStatusClass(element) {
 }
 
 
-
 const quizData = [
     {
         question: "What is 14 times 14?",
-        answers: [
-        { a: "189", correct: false },
-        { b: "157", correct: false },
-        { c: "196", correct: true },
-        { d: "none of the above", correct: false},
-        ]
+        choices: ["189","157","196","none of the above"],
+        answer: "196"
+        
     },
     {
         question: "What is 17 times 20?",
