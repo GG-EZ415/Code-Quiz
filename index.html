@@ -18,9 +18,16 @@
     <h5 id="timeRemaining">Time Remaining:<span id="count">3:00</span></h5>
     </div>
     <div class="entireBox">
-    
-            <div class="quizHeader">
-            <div class="quizContainer" class="hide" id="quiz">
+      <div id="rules" class="start">
+        <h1>Welcome to the Quiz</h1>
+        <p>
+          No cheating,
+          Incorrect Answers will take time off
+        </p>
+        <button id="start-btn" class="btn btn-start">Start</button>
+      </div>
+            <div id="quizHeader" class="hide">
+            <div class="quizContainer" id="quiz">
                 <div class="quiz-header">
                   <h2 id="question">Question Here</h2>
                       <div id="answer-buttons" class="btn-grid">
@@ -29,34 +36,12 @@
                         <button class="btn">Answer 3</button>
                         <button class="btn">Answer 4</button>
                       </div>
-                  <!-- tried to make a quiz layout via radio buttons, didnt work out.... -->
-                  <!-- <ul>
-                    <li>
-                      <input type="radio" name="answer" id="a" class="answer">
-                      <label for="a" id="a_text">A</label>
-                    </li>
-            
-                    <li>
-                      <input type="radio" name="answer" id="b" class="answer">
-                      <label for="b" id="b_text">B</label>
-                    </li>
-            
-                    <li>
-                      <input type="radio" name="answer" id="c" class="answer">
-                      <label for="c" id="c_text">C</label>
-                    </li>
-            
-                    <li>
-                      <input type="radio" name="answer" id="d" class="answer">
-                      <label for="d" id="d_text">D</label>
-                    </li>
-                  </ul> -->
+                  
                 </div>
             
                 <div class="controls">
-                  <button id="start-btn" class="btn btn-start">Start</button>
+                  
                   <button id="next-btn" class="btn btn-next hide">Next</button>
-                  <button id="start-btn" class="start-btn btn">Start</button>
                   <button id="next-btn" class="next-btn btn hide">Next</button>
                 </div>
             

@@ -1,24 +1,29 @@
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById('question-container')
+const questionContainerElement = document.getElementById('quizHeader')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
+var questionIndex = 0;
+var timer = document.getElementById('count');
+
+var clockId;
+
 let shuffledQuestions, currentQuestionIndex
 
-startButton.addEventListener('click', startGame)
-nextButton.addEventListener('click', () => {
-  currentQuestionIndex++
-  setNextQuestion()
-})
-function startGame() {
-  startButton.classList.add('hide')
-  shuffledQuestions = questions.sort(() => Math.random() - .5)
-  currentQuestionIndex = 0
-  questionContainerElement.classList.remove('hide')
-  setNextQuestion(shuffledQuestions, currentQuestionIndex)
-  setNextQuestion()
-}
+// startButton.addEventListener('click', startGame)
+// nextButton.addEventListener('click', () => {
+//   currentQuestionIndex++
+//   setNextQuestion()
+// })
+// function startGame() {
+//   startButton.classList.add('hide')
+//   shuffledQuestions = questions.sort(() => Math.random() - .5)
+//   currentQuestionIndex = 0
+//   questionContainerElement.classList.remove('hide')
+//   setNextQuestion(shuffledQuestions, currentQuestionIndex)
+//   setNextQuestion()
+// }
 
 function setNextQuestion() {
   resetState()
@@ -94,122 +99,45 @@ const quizData = [
     },
     {
         question: "What is 17 times 20?",
-        answers: [
-        { a: "340", correct: true },
-        { b: "345", correct: false },
-        { c: "325", correct: false },
-        { d: "350", correct: false },
-        ]
+        choices: ["340","345","325", "350"],
+        answer: "340"
     },
     {
         question: "What is 38 times 4?",
-        answers: [
-        { a: "152", correct: true },
-        { b: "162", correct: false },
-        { c: "142", correct: false },
-        { d: "none of the above", correct: false },
-        ]
+        choices: ["152", "162", "142","none of the above"],
+        answer: "152"
     },
     {
         question: "What 47 Time 15?",
-        answers: [
-        { a: "700", correct: false },
-        { b: "675", correct: false },
-        { c: "715", correct: false },
-        { d: "none of the above", correct: true },
-        ]
+        choices: ["700", "675", "715", "none of the above"],
+        answer: "none of the above"
     },
 ];
 
+var time = quizData.length * 16;
+
+function start() {
+  // hide start screen
+  var startScreen = document.getElementById('rules');
+  startScreen.setAttribute("class","hide");
+  // make questions visible
+  questionContainerElement.removeAttribute("class");
+    startClock();
+};
+startButton.onclick = start;
 
 
-// tried to start one way of attacking this assignment
-// const quiz = getElementById('quiz')
-// const answerEls = document.querySelectorAll('.answer')
-// const questionEl = getElementById('question')
-// const a_text = document.getElementById('a_text')
-// const b_text = document.getElementById('b_text')
-// const c_text = document.getElementById('c_text')
-// const d_text = document.getElementById('d_text')
-// const submitBtn = document.getElementById('submit')
-
-
-// let currentQuiz = 0
-// let score = 0
-
-// loadQuiz()
-
-// function loadQuiz() {
-
-//     deselectAnswers()
-
-//     const currentQuizData = quizData[currentQuiz]
-
-//     questionEl.innerText = currentQuizData.question
-//     a_text.innerText = currentQuizData.a
-//     b_text.innerText = currentQuizData.b
-//     c_text.innerText = currentQuizData.c
-//     d_text.innerText = currentQuizData.d
-// }
-
-// function deselectAnswers() {
-//     answerEls.forEach(answerEl => answerEl.checked = false)
-// }
-
-// function getSelected() {
-//     let answer
-//     answerEls.forEach(answerEl => {
-//         if(answerEl.checked) {
-//             answer = answerEl.id
-//         }
-//     })
-//     return answer;
-// }
-
-
-// submitBtn.addEventListener('click', () => {
-//     const answer = getSelected()
-//     if(answer) {
-//        if(answer === quizData[currentQuiz].correct) {
-//            score++
-//        }
-
-//        currentQuiz++
-
-//        if(currentQuiz < quizData.length) {
-//            loadQuiz()
-//        } else {
-//            quiz.innerHTML = `
-//            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-
-//            <button onclick="location.reload()">Reload</button>
-//            `
-//        }
-//     }
-// })
-
-
-
-//tried to have a start button feature that iniated a countdown
-
-// $("#startClock").click(function startTimer(){
-//     var counter = 3;
-//     setInterval(function() {
-//       counter--;
-//       if (counter >= 0) {
-//         span = document.getElementById("count");
-//         span.innerHTML = counter;
-//       }
-//       if (counter === 0) {
-//           alert('Game Over');
-//           clearInterval(counter);
-//       }
-//     }, 1000);
-// })();
+function startClock() {
+  time--;
+  timer.textContent = time;
+  if (time <= 0) {
+    // clear the interval, stop timer, then show final score and hide questions
+    endQuiz();
+  }
+}
   
-//     function start()
-//   {
-//       document.getElementById("count");
-//       startTimer();
-//   };
-//   start();
+// question logic: create a function
+// get current question from object arrray
+// update the HTML question element with the current question using '.textContent.question'
+// create a for loop to dynamicly append new choices for each question
+// check answers 

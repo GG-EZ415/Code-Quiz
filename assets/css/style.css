@@ -85,3 +85,6 @@ ul {
     border-color: #E8D4C2;
     color:#99561C;
 }
+.hide {
+    display: none;
+}
